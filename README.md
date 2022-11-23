@@ -41,7 +41,7 @@ Step 3. `DATA_DIR=${PWD}/Data docker run -it --rm -m 4g --name sentients -e USER
 **Test Model**<br/>
 Once the step 3 run is successful and root directory is shown in command line<br/>
 Step 4. `cd /home/rstudio`<br/>
-Step 5. `Rscript main.R`<br/>  
+Step 5. `Rscript main.R`<br/>
 Step 6. `exit`<br/> 
 
 The step 5 would run the model to generate the file with predictions on the test data for each split and capture the AUC results for each split. And finally display the Split vise AUC results.
