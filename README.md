@@ -24,6 +24,7 @@ A video presentation demonstrating usage of the software is available at [Link](
 |    └── splits.csv                                   <-- file with split information to generate split folders
 ├── Project Progress Report - Sentients.pdf 
 ├── Project Proposal - Sentients.pdf 
+├── Project Final_Report - Sentients.pdf 
 ├── Dockerfile                                        <-- configuration for Docker image
 └── README.md                           
 ```
