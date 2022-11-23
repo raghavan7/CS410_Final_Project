@@ -3,7 +3,7 @@
 
 A video presentation demonstrating usage of the software is available at [Link](https://youtube)
 
-## Project Structure
+### **Project Structure**
 
 ```plaintext
 ├── main.R                                            <-- R file containing model execution and AUC check
@@ -28,19 +28,30 @@ A video presentation demonstrating usage of the software is available at [Link](
 └── README.md                           
 ```
 
-### 1) Docker Image setup and model execution steps for execution for Graders
+### **Docker Image setup and model execution steps for Graders (or TA's)**
 
 **Build Docker**<br/>
 Step 1. `docker build --rm --force-rm -t rstudio/sentients .` <br/>
 Step 2. `docker image list | grep sentients`<br/>
 
 **Run Docker**<br/>
-Step 3. `DATA_DIR=${PWD}/Data docker run -it --rm -m 4g --name sentients -e` 
-        `USERID=$UID -v $DATA_DIR:/home/rstudio/data rstudio/sentients`  
-        `/bin/bash`<br/>
+Step 3. `DATA_DIR=${PWD}/Data docker run -it --rm -m 4g --name sentients -e USERID=$UID -v $DATA_DIR:/home/rstudio/data rstudio/sentients /bin/bash`<br/>
 
 **Test Model**<br/>
 Once the step 3 run is successful and root directory is shown in command line<br/>
 Step 4. `cd /home/rstudio`<br/>
-Step 5. `Rscript main.R`<br/>
+Step 5. `Rscript main.R`<br/>  
+
+The step 5 would run the model to generate the file with predictions on the test data for each split and capture the AUC results for each split. And finally display the Split vise AUC results.
+
+e.g. AUC run results are as below<br/>
+
+| Splits 	| AUC 	|
+|:---:	|:---:	|
+| Split_1 	| 0.9608423 	|
+| Split_2 	| 0.9638969 	|
+| Split_3 	| 0.9639498 	|
+| Split_4 	| 0.9642103 	|
+| Split_5 	| 0.9636719 	|
+
 
